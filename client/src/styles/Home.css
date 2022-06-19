@@ -1,0 +1,10 @@
+.home {
+    box-sizing: border-box;
+    border: 1px solid green;
+    width: calc(100vw - 350px);
+}
+
+.home-title {
+    text-align: center;
+    font-size: 2rem;
+}
