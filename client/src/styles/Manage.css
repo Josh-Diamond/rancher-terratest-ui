@@ -1,0 +1,10 @@
+.manage {
+    box-sizing: border-box;
+    border: 1px solid green;
+    width: calc(100vw - 350px);
+}
+
+.manage-title {
+    text-align: center;
+    font-size: 2rem;
+}
