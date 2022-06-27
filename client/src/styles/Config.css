@@ -1,0 +1,15 @@
+.config {
+    box-sizing: border-box;
+    border: 1px solid green;
+    width: calc(100vw - 350px);
+}
+
+.config-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+section {
+    border: 1px solid blue;
+    padding: 10px;
+}
