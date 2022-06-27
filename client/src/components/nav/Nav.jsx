@@ -2,7 +2,7 @@ import React from 'react'
 import '../../styles/Nav.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilePen, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
+import { faFilePen, faFolderOpen, faGears } from '@fortawesome/free-solid-svg-icons'
 
 
 export const Nav = () => {
@@ -10,6 +10,10 @@ export const Nav = () => {
         <div className='nav'>
             <h1 className='nav-title'> Rancher • Terratest</h1>
             <div className='links'>
+            <div className='config-nav'>
+                    <FontAwesomeIcon icon={faGears} />
+                    <Link to="/config" className='config-link'>Config.go</Link>
+                </div>
                 <div className='create-nav'>
                     <FontAwesomeIcon icon={faFilePen} />
                     <Link to="/create" className='create-link'>CREATE</Link>

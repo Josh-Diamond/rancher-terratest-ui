@@ -16,13 +16,13 @@
     font-size: 1.5rem;
 }
 
-.create-nav, .manage-nav {
+.create-nav, .manage-nav, .config-nav {
     cursor: pointer;
     border: 1px solid red;
     padding: 10px;
 }
 
-.create-link, .manage-link {
+.create-link, .manage-link, .config-link {
     padding-left: 15px;
     text-decoration: none;
 }
