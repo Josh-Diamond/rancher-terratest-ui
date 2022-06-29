@@ -1,0 +1,67 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    /* border: 1px solid blue; */
+    width: 100vw;
+    background-color: #1b1c21;
+    color: #fff;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.login-title {
+    font-family: "Lato",arial,helvetica,sans-serif;
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.logo-cow {
+    display: block;
+    width: 375px;
+}
+
+
+.password {
+    margin-top: 35px;
+    width: 300px;
+    border: none;
+    text-align: center;
+    background-color: #1b1c21;
+    color: #fff;
+    letter-spacing: 1.75px;
+    outline: none;
+    font-size: 14px;
+    margin-left: 14px;
+}
+
+.password:hover {
+    cursor: none;
+}
+
+.password:focus {
+   color: #fff;
+}
+
+.password::placeholder { 
+    text-align: center;
+  }
+
+.password:hover::placeholder {
+    color: #fff;
+}
+  
+.password:-ms-input-placeholder {
+    text-align: center;
+  }
+  
+  .password::-ms-input-placeholder {
+    text-align: center;
+  }

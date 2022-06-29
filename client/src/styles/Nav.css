@@ -1,6 +1,7 @@
 .nav {
     box-sizing: border-box;
     width: 350px;
+    border: 1px solid green;
 }
 
 .nav-title {
@@ -16,13 +17,13 @@
     font-size: 1.5rem;
 }
 
-.create-nav, .manage-nav, .config-nav {
+.create-nav, .manage-nav, .config-nav, .logout-nav {
     cursor: pointer;
     border: 1px solid red;
     padding: 10px;
 }
 
-.create-link, .manage-link, .config-link {
+.create-link, .manage-link, .config-link, .logout-link {
     padding-left: 15px;
     text-decoration: none;
 }

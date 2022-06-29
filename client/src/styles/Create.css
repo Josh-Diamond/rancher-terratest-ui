@@ -1,3 +1,6 @@
+.create-wrapper {
+    display: flex;
+}
 .create {
     box-sizing: border-box;
     border: 1px solid green;
