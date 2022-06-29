@@ -48,7 +48,6 @@ table {
 .App {
   box-sizing: border-box;
   display: flex;
-  /* border: 1px solid red; */
   height: 100vh;
 }
 

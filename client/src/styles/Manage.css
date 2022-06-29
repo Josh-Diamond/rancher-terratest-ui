@@ -1,10 +1,11 @@
 .manage-wrapper {
     display: flex;
+    background-image: url(https://releases.rancher.com/dashboard/latest/shell/assets/images/pl/login-landscape.svg);
 }
 .manage {
     box-sizing: border-box;
     border: 1px solid green;
-    width: calc(100vw - 350px);
+    width: calc(100vw - 200px);
 }
 
 .manage-title {

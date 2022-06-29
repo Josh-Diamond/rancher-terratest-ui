@@ -1,14 +1,18 @@
 .nav {
     box-sizing: border-box;
-    width: 350px;
-    border: 1px solid green;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
-.nav-title {
-    text-align: center;
-    font-size: 2rem;
-    padding-top: 15px;
+
+.rancher {
+    height: 30px;
     padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0175A8;
 }
 
 .links {
@@ -18,12 +22,42 @@
 }
 
 .create-nav, .manage-nav, .config-nav, .logout-nav {
-    cursor: pointer;
-    border: 1px solid red;
-    padding: 10px;
+    padding: 10px 0px;
+    color: grey;
+    letter-spacing: 1.8px;
+    margin: 15px 0;
+    
 }
 
-.create-link, .manage-link, .config-link, .logout-link {
+.create-link {
+    padding-left: 18px;
+    text-decoration: none;
+    letter-spacing: 1.8px;
+    color: #fff;
+    cursor: pointer;
+}
+.manage-link {
+    padding-left: 18px;
+    text-decoration: none;
+    letter-spacing: 1.8px;
+    color: #fff;
+    cursor: pointer;   
+}
+
+.config-link {
     padding-left: 15px;
     text-decoration: none;
+    letter-spacing: 1.8px;
+    color: #fff;
+    cursor: pointer;    
+}
+.logout-link {
+    padding-left: 22px;
+    text-decoration: none;
+    letter-spacing: 1.8px;
+    color: #fff;
+    cursor: pointer;   
+}
+.create-link:hover, .manage-link:hover, .config-link:hover, .logout-link:hover {
+    color: #0175A8;
 }
