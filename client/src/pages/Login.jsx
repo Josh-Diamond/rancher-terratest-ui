@@ -36,9 +36,9 @@ export const Login = ({setAuth}) => {
        <div className="login-wrapper">
         <img src="https://releases.rancher.com/dashboard/latest/shell/assets/images/pl/dark/login-landscape.svg" className="hero-image" />
        <div className="left">
+            <h2 className="login-title">Welcome to Rancher Terratest</h2>
+            <img src={logo} className="logo-cow" />
             <form onSubmit={e => login(e)}>
-                <h2 className="login-title">Welcome to Rancher Terratest</h2>
-                <img src={logo} className="logo-cow" />
                 <input className="password" type='password' placeholder='PASSWORD' value={pass} onChange={e => passHandler(e)} />
             </form>
        </div>

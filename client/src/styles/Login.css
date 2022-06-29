@@ -32,10 +32,12 @@
 .password {
     margin-top: 35px;
     width: 300px;
+    height: 30px;
     border: none;
+    border-bottom: 1px solid grey;
     text-align: center;
     background-color: #1b1c21;
-    color: #fff;
+    color: #0175A8;
     letter-spacing: 1.75px;
     outline: none;
     font-size: 14px;
@@ -43,16 +45,26 @@
 }
 
 .password:hover {
-    cursor: none;
+    cursor: pointer;
 }
 
 .password:focus {
-   color: #fff;
+   border-bottom: 1px solid #fff;
+   caret-color: #1b1c21;
+   cursor: none;
 }
 
 .password::placeholder { 
     text-align: center;
-  }
+}
+
+.password:focus::placeholder { 
+    color: #1b1c21;
+}
+
+.password:focus:hover::placeholder { 
+    color: #1b1c21;
+}
 
 .password:hover::placeholder {
     color: #fff;
