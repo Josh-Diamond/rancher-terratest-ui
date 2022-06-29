@@ -1,3 +1,6 @@
+.manage-wrapper {
+    display: flex;
+}
 .manage {
     box-sizing: border-box;
     border: 1px solid green;

@@ -1,11 +1,19 @@
 import React from 'react'
 import '../../styles/Nav.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilePen, faFolderOpen, faGears } from '@fortawesome/free-solid-svg-icons'
+import { faFilePen, faFolderOpen, faGears, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 
-export const Nav = () => {
+export const Nav = ({setAuth}) => {
+
+    const Logout = () => {
+        const nav = useNavigate()
+        localStorage.removeItem("token")
+        setAuth(false)
+        nav("/")
+    }
+
     return (
         <div className='nav'>
             <h1 className='nav-title'> Rancher • Terratest</h1>
@@ -21,6 +29,10 @@ export const Nav = () => {
                 <div className='manage-nav'>
                 <FontAwesomeIcon icon={faFolderOpen} />
                     <Link to="/manage" className='manage-link'>MANAGE</Link>
+                </div>
+                <div onClick={() => Logout()} className='logout-nav'>
+                <FontAwesomeIcon icon={faRightFromBracket} />
+                    <Link to="/" className='logout-link'>LOGOUT</Link>
                 </div>
             </div>
 

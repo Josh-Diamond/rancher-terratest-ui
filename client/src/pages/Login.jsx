@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import '../styles/Login.css'
 import { useNavigate } from 'react-router-dom'
+import logo from '../static/rancher-cow-logo.png'
 
-export const Login = () => {
+export const Login = ({setAuth}) => {
     const nav = useNavigate()
     const [user, setUser] = useState("admin")
     const [pass, setPass] = useState("")
@@ -20,6 +22,7 @@ export const Login = () => {
             .post('http://localhost:5001/api/login', creds)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
+                setAuth(true)
                 nav("/home")
             })
             .catch(err => console.log(err))
@@ -30,11 +33,15 @@ export const Login = () => {
     }
 
     return (
-       <div>
-        <form onSubmit={e => login(e)}>
-            <input type='password' placeholder='password' value={pass} onChange={e => passHandler(e)} />
-            <button>Submit</button>
-        </form>
+       <div className="login-wrapper">
+        <img src="https://releases.rancher.com/dashboard/latest/shell/assets/images/pl/dark/login-landscape.svg" className="hero-image" />
+       <div className="left">
+            <form onSubmit={e => login(e)}>
+                <h2 className="login-title">Welcome to Rancher Terratest</h2>
+                <img src={logo} className="logo-cow" />
+                <input className="password" type='password' placeholder='PASSWORD' value={pass} onChange={e => passHandler(e)} />
+            </form>
+       </div>
        </div>
     )
 }
