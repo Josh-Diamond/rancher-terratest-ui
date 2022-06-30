@@ -10,4 +10,30 @@
 .home-title {
     text-align: center;
     font-size: 2rem;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    top: 300px;
+    right: 500px;
+}
+
+.gopher {
+    height: 300px;
+    position: fixed;
+    bottom: 0;
+}
+
+.bubble {
+    position: fixed;
+    height: 400px;
+    bottom: 300px;
+    left: 300px;
+}
+
+.welcome {
+    font-size: 3rem;
+}
+
+.rt {
+    font-size: 5rem
 }

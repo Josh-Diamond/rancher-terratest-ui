@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../styles/Nav.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,8 +6,6 @@ import { faCaretDown, faFilePen, faFolderOpen, faGears, faRightFromBracket } fro
 import rancherBlue from '../../static/rbf.png'
 import rancherGrey from '../../static/rgf.png'
 import { motion } from 'framer-motion'
-import bell from '../../static/tbell.ico'
-import whiteBell from '../../static/wbf.png'
 
 export const Nav = ({setAuth, isOpen, setIsOpen}) => {
 
@@ -58,7 +56,6 @@ export const Nav = ({setAuth, isOpen, setIsOpen}) => {
                 </Link>
                 <motion.div  initial={false} className="animatedd" animate={isOpen ? "opened" : "closed"} variants={iconVariants} transition={{ type: "spring", stiffness: 150 }} onClick={() => setIsOpen(!isOpen)}>
                     <FontAwesomeIcon icon={faCaretDown} className='caret-down' />
-                    {/* <img src={whiteBell} className='bell' /> */}
                 </motion.div>
             </div>
         
