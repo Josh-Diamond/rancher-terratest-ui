@@ -1,0 +1,22 @@
+.k8s-container {
+    height: 25px;
+    padding: 0 10px;
+    /* max-width: 75px; */
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    /* background-color: rgba(0,0,0,0.2);
+    color: #fff; */
+    /* color: #0175A8; */
+    color: #59595B;
+    margin: 10px;
+}
+
+.k8s-container:hover {
+    color: #fff;
+    background-color: #0175A8;
+    cursor: pointer;
+}

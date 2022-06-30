@@ -3,16 +3,89 @@
     background-image: url(https://releases.rancher.com/dashboard/latest/shell/assets/images/pl/login-landscape.svg);
 }
 .config {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     box-sizing: border-box;
-    width: calc(100vw - 200px);
+    width: calc(100vw - 240px);
 }
 
 .config-title {
     text-align: center;
     font-size: 2rem;
+    letter-spacing: 1.8px;
+    /* color: #59595B; */
+    color: #0175A8;
+    margin-bottom: -25px;
+    font-weight: bold;
+}
+
+.config-page {
+    height: 85vh;
+    width: 65vw;
+    /* border: 1px solid red; */
+    background-color: #FBFBF8;
+    border-radius: 12px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 16px;
+    /* max-width: 210px; */
+}
+.icon {
+  height: 13px;
+  padding-right: 15px;
+}
+
+.icon:hover {
+    color: #0175A8;
+    cursor: pointer;
+}
+
+.map {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    flex-wrap: wrap;
 }
 
 section {
     padding: 10px;
-    /* border: 1px solid blue; */
+    /* border: 1px solid #0175A8; */
+}
+
+.k8s-title {
+    color: #0175A8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.k8s-versions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.blue-underline {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #0175A8;
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.bold {
+    font-weight: bold;
 }

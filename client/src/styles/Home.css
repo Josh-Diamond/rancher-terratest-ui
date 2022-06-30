@@ -22,6 +22,7 @@
     height: 300px;
     position: fixed;
     bottom: 0;
+    max-width: 100%;
 }
 
 .bubble {
@@ -29,4 +30,5 @@
     height: 400px;
     bottom: 300px;
     left: 300px;
+    max-width: 100%;
 }

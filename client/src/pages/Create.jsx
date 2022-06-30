@@ -8,7 +8,10 @@ export const Create = ({setAuth, isOpen, setIsOpen}) => {
         <div className='create-wrapper'>
             <Nav setAuth={setAuth} isOpen={isOpen} setIsOpen={setIsOpen} />
             <div className='create'>
-                <h2 className='create-title'>Create Page</h2>
+                <h2 className='create-title'>CREATE</h2>
+                <div className='create-page'>
+
+                </div>
             </div>
         </div>
     )
