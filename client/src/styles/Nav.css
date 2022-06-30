@@ -1,18 +1,41 @@
 .nav {
     box-sizing: border-box;
-    width: 200px;
+    width: 240px;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
 
+.nav-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid red; */
+}
 
-.rancher {
+.rancher-blue {
+    height: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid grey;
+}
+
+.rancher-grey {
     height: 30px;
     padding-bottom: 15px;
     margin-bottom: 10px;
     border-bottom: 2px solid #0175A8;
+}
+
+.caret-down {
+    font-size:30px;
+    color: #fff;
+}
+
+.caret-down:hover {
+    color: #0175A8;
+    cursor: pointer;
 }
 
 .links {
@@ -26,6 +49,7 @@
     color: grey;
     letter-spacing: 1.8px;
     margin: 15px 0;
+    margin-left: 7px;
     
 }
 
@@ -33,14 +57,16 @@
     padding-left: 18px;
     text-decoration: none;
     letter-spacing: 1.8px;
-    color: #fff;
+    color: #0175A8;
+    text-shadow:0 0 5px #0175A8;
     cursor: pointer;
 }
 .manage-link {
     padding-left: 18px;
     text-decoration: none;
     letter-spacing: 1.8px;
-    color: #fff;
+    color: #0175A8;
+    text-shadow:0 0 5px #0175A8;
     cursor: pointer;   
 }
 
@@ -48,16 +74,56 @@
     padding-left: 15px;
     text-decoration: none;
     letter-spacing: 1.8px;
-    color: #fff;
-    cursor: pointer;    
+    color: #0175A8;
+    text-shadow:0 0 5px #0175A8;
+    cursor: pointer;  
 }
 .logout-link {
     padding-left: 22px;
     text-decoration: none;
     letter-spacing: 1.8px;
-    color: #fff;
+    color: #0175A8;
+    text-shadow:0 0 5px #0175A8;
     cursor: pointer;   
 }
 .create-link:hover, .manage-link:hover, .config-link:hover, .logout-link:hover {
-    color: #0175A8;
+    /* color: #0175A8; */
+    text-shadow:0 0 10px #fff;  
+    color: white;
 }
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.animatedd {
+
+    max-height: 25px;
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.bell {
+    height: 25px;
+}
+
+.bell:hover {
+    cursor: pointer;
+    color: blue;
+}
+/* .open {
+    /* transition: all 2s ease; */
+    /* box-sizing: border-box;
+    width: 240px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 10px; */
+/* }  */

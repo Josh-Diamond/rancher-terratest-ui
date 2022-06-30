@@ -4,7 +4,7 @@
 }
 .manage {
     box-sizing: border-box;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: calc(100vw - 200px);
 }
 

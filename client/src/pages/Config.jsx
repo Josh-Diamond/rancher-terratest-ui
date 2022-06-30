@@ -3,7 +3,7 @@ import '../styles/Config.css'
 import axiosWithAuth from '../components/auth/axiosWithAuth'
 import { Nav } from '../components/nav/Nav'
 
-export const Config = ({setAuth}) => {
+export const Config = ({setAuth, isOpen, setIsOpen}) => {
     const [modules, setModules] = useState([])
     const [k8sVersions, setK8sVersions] = useState([])
     const [nodes, setNodes] = useState([])
@@ -28,7 +28,7 @@ export const Config = ({setAuth}) => {
 
     return (
         <div className='config-wrapper'>
-            <Nav setAuth={setAuth} />
+            <Nav setAuth={setAuth} isOpen={isOpen} setIsOpen={setIsOpen} />
             <div className='config'>
                 <h2 className='config-title'>Config Page</h2>
                 <section className="modules">

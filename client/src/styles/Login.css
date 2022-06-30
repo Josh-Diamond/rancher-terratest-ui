@@ -1,7 +1,6 @@
 .login-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    /* border: 1px solid blue; */
     width: 100vw;
     background-color: #1b1c21;
     color: #fff;
@@ -13,11 +12,9 @@
     width: 100%;
     justify-content: center;
     flex-direction: column;
-
 }
 
 .login-title {
-    font-family: "Lato",arial,helvetica,sans-serif;
     font-size: 24px;
     line-height: 1.15;
     margin-bottom: 20px;
@@ -74,6 +71,14 @@
     text-align: center;
   }
   
-  .password::-ms-input-placeholder {
+.password::-ms-input-placeholder {
     text-align: center;
-  }
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
