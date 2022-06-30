@@ -28,7 +28,7 @@ export const Nav = ({setAuth, isOpen, setIsOpen}) => {
         },
         closed: {
             height: "8vh",
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
             borderBottomRightRadius: "12px"
         }
     }
