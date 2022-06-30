@@ -5,6 +5,7 @@ import { Home } from './pages/Home'
 import { Create } from './pages/Create'
 import { Manage } from './pages/Manage'
 import { Config } from './pages/Config'
+import CreatedBy from './components/design/CreatedBy'
 import { Routes,Route } from 'react-router-dom'
 import PrivateRoute from './components/auth/PrivateRoute'
 import logo from './static/diamondlogo.png'
@@ -12,9 +13,11 @@ import logo from './static/diamondlogo.png'
 function App() {
 const [auth, setAuth] = useState(false)
 const [isOpen, setIsOpen] = useState(false)
+const [createdBy, setCreatedBy] = useState(false)
   return (
     <div className="App">
-      <img src={logo} className="diamond-logo unselectable" />
+      {createdBy ? <CreatedBy setCreatedBy={setCreatedBy} /> : null}
+      <img src={logo} className="diamond-logo unselectable" onClick={() => setCreatedBy(true)} />
       <Routes>
         <Route exact path="/" element={<Login setAuth={setAuth} />} />
         <Route path="/home" element={<PrivateRoute auth={auth} setAuth={setAuth} isOpen={isOpen} setIsOpen={setIsOpen}><Home isOpen={isOpen} setIsOpen={setIsOpen} /></PrivateRoute>}/>

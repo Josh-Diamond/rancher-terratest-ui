@@ -3,11 +3,28 @@
     background-image: url(https://releases.rancher.com/dashboard/latest/shell/assets/images/pl/login-landscape.svg);
 }
 .create {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     box-sizing: border-box;
-    width: calc(100vw - 200px);
+    width: calc(100vw - 240px);
 }
 
 .create-title {
     text-align: center;
     font-size: 2rem;
+    letter-spacing: 1.8px;
+    /* color: #59595B; */
+    color: #0175A8;
+    margin-bottom: -25px;
+    font-weight: bold;
+}
+
+.create-page {
+    height: 85vh;
+    width: 65vw;
+    /* border: 1px solid red; */
+    background-color: #FBFBF8;
+    border-radius: 12px;
 }
