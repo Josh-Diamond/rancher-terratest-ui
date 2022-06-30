@@ -66,25 +66,25 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                     </div>
                     <div className='map'>
                         <div className='k8s-title'>
-                            <h2 className='bold'>AKS</h2>
+                            <h2>AKS</h2>
                             <div className='k8s-versions'>
                                 {aksVersions.map(k => <KubernetesVersion version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
-                            <h2 className='bold'>K3S</h2>
+                            <h2>K3S</h2>
                             <div className='k8s-versions'>
                                 {k3sVersions.map(k => <KubernetesVersion version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
-                            <h2 className='bold'>RKE1</h2>
+                            <h2>RKE1</h2>
                             <div className='k8s-versions'>
                                 {rke1Versions.map(k => <KubernetesVersion version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
-                            <h2 className='bold'>RKE2</h2>
+                            <h2>RKE2</h2>
                             <div className='k8s-versions'>
                                 {rke2Versions.map(k => <KubernetesVersion version={k} />)}
                             </div>
