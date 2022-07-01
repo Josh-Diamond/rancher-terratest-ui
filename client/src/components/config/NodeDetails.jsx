@@ -4,13 +4,28 @@ import React, { version } from 'react'
 export const NodeDetails = ({ node }) => {
 
     return (
-        <div className='node-container'>
-            <p>id: {node.id}</p>
-            <p>name: {node.name}</p>
-            <p>quantity: {node.quantity}</p>
-            <p>etcd: {node.etcd ? 'true' : 'false'}</p>
-            <p>cp: {node.cp ? 'true' : 'false'}</p>
-            <p>wkr: {node.wkr ? 'true' : 'false'}</p>
+        <div className='module-details'>
+            <h2 className='spec-title'>NODE</h2>
+            <div className='spec'>
+                <p>name:</p>
+                <p>{node.name}</p>
+            </div>
+            <div className='spec'>
+                <p>quantity:</p>
+                <p>{node.quantity}</p>
+            </div>
+            <div className='spec'>
+                <p>etcd:</p>
+                <p>{node.etcd ? 'true' : 'false'}</p>
+            </div>
+            <div className='spec'>
+                <p>cp:</p>
+                <p>{node.cp ? 'true' : 'false'}</p>
+            </div>
+            <div className='spec'>
+                <p>wkr:</p>
+                <p>{node.wkr ? 'true' : 'false'}</p>
+            </div>
         </div>
     )
 }

@@ -28,4 +28,32 @@
 .module-details {
     display: flex;
     flex-direction: column;
+    /* border: 1px solid red; */
+    width: 50vw;
+    height: 165px;
+    justify-content: space-evenly;
+    background-color: rgba(0,0,0,.9);
+    border-radius: 12px;
+    color: white;
+    background-image: url('../static/rgf.png');
+    background-size: 45vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    
 }
+
+.spec {
+    display: flex;
+    padding: 0 2vw;
+}
+
+.spec-title {
+    margin: 0 auto;
+    font-weight: bold;
+}
+/* .rbf-details {
+    position: fixed;
+    height: 100px;
+    left: 565px;
+    opacity: 0.75;
+} */
