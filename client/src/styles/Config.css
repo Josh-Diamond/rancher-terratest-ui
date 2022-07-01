@@ -102,3 +102,7 @@ section {
 .bold {
     font-weight: bold;
 }
+
+.detail-note {
+    margin-top: 50px;
+}

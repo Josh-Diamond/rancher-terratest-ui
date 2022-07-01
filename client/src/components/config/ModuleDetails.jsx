@@ -5,9 +5,15 @@ export const ModuleDetails = ({ module}) => {
 
     return (
         <div className='module-details'>
-            <p>id: {module.id}</p>
-            <p>module: {module.module}</p>
-            <p>value: {module.value}</p>
+            <h2 className='spec-title'>MODULE</h2>
+            <div className='spec'>
+                <p>module:</p>
+                <p>{module.module}</p>
+            </div>
+            <div className='spec'>
+                <p>value:</p>
+                <p>{module.value}</p>
+            </div>
         </div>
     )
 }

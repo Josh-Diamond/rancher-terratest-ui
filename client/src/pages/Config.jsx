@@ -135,7 +135,7 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                 {typeDetails === 'version' ? <VersionDetails version={versionDetails} /> : null}
                 {typeDetails === 'node' ? <NodeDetails node={nodeDetails} /> : null}
                 {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} /> : null}
-                {typeDetails === '' ? <p>Make a selection to view details</p> : null}
+                {typeDetails === '' ? <p className='detail-note'>Make a selection to view details</p> : null}
 
                 </div>
                 </section>
