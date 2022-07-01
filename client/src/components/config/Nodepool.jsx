@@ -1,14 +1,14 @@
 import React from 'react'
 import '../../styles/K8sversion.css'
 
-export const KubernetesVersion = ({ version, setVersionDetails, setTypeDetails }) => {
+export const Nodepool = ({ nodepool, setNodepoolDetails, setTypeDetails }) => {
     const setDetails = () => {
-        setVersionDetails(version)
-        setTypeDetails('version')
+        setNodepoolDetails(nodepool)
+        setTypeDetails('nodepool')
     }
     return (
         <div className='k8s-container' onClick={() => setDetails()}>
-            <p>{version.version}</p>
+            <p>{nodepool.name}</p>
         </div>
     )
 }

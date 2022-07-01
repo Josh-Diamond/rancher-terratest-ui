@@ -3,8 +3,13 @@ import '../styles/Config.css'
 import axiosWithAuth from '../components/auth/axiosWithAuth'
 import { Nav } from '../components/nav/Nav'
 import { Module } from '../components/config/Module'
+import { ModuleDetails } from '../components/config/ModuleDetails'
+import { VersionDetails } from '../components/config/VersionDetails'
+import { NodeDetails } from '../components/config/NodeDetails'
+import { NodepoolDetails } from '../components/config/NodepoolDetails'
 import { KubernetesVersion } from '../components/config/KubernetesVersion'
 import { Node } from '../components/config/Node'
+import { Nodepool } from '../components/config/Nodepool'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSquarePlus} from '@fortawesome/free-solid-svg-icons'
 
@@ -16,7 +21,17 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
     const [rke2Versions, setRke2Versions] = useState([])
     const [nodes, setNodes] = useState([])
     const [nodepools, setNodepools] = useState([])
+    const [moduleDetails, setModuleDetails] = useState({})
+    const [versionDetails, setVersionDetails] = useState({})
+    const [nodeDetails, setNodeDetails] = useState({})
+    const [nodepoolDetails, setNodepoolDetails] = useState({})
+    const [typeDetails, setTypeDetails] = useState('')
 
+    console.log("mod", moduleDetails)
+    console.log("version", versionDetails)
+    console.log("node", nodeDetails)
+    console.log("pool", nodepoolDetails)
+    console.log('type', typeDetails)
     useEffect(() => {
         axiosWithAuth()
           .get('http://localhost:5001/api/modules')
@@ -56,7 +71,7 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                         <FontAwesomeIcon icon={faPlus} className='icon' />
                     </div>
                     <div className='map'>
-                        {modules.map(m => <Module module={m} />)}
+                        {modules.map(m => <Module module={m} setModuleDetails={setModuleDetails} setTypeDetails={setTypeDetails} />)}
                     </div>
                 </section>
                 <section className='k8sversions'>
@@ -68,28 +83,27 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                         <div className='k8s-title'>
                             <h2>AKS</h2>
                             <div className='k8s-versions'>
-                                {aksVersions.map(k => <KubernetesVersion version={k} />)}
+                                {aksVersions.map(k => <KubernetesVersion setVersionDetails={setVersionDetails} setTypeDetails={setTypeDetails} version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
                             <h2>K3S</h2>
                             <div className='k8s-versions'>
-                                {k3sVersions.map(k => <KubernetesVersion version={k} />)}
+                                {k3sVersions.map(k => <KubernetesVersion setVersionDetails={setVersionDetails} setTypeDetails={setTypeDetails} version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
                             <h2>RKE1</h2>
                             <div className='k8s-versions'>
-                                {rke1Versions.map(k => <KubernetesVersion version={k} />)}
+                                {rke1Versions.map(k => <KubernetesVersion setVersionDetails={setVersionDetails} setTypeDetails={setTypeDetails} version={k} />)}
                             </div>
                         </div>
                         <div className='k8s-title'>
                             <h2>RKE2</h2>
                             <div className='k8s-versions'>
-                                {rke2Versions.map(k => <KubernetesVersion version={k} />)}
+                                {rke2Versions.map(k => <KubernetesVersion setVersionDetails={setVersionDetails} setTypeDetails={setTypeDetails} version={k} />)}
                             </div>
                         </div>
-                        {/* {k8sVersions.map(k => <KubernetesVersion version={k} />)} */}
                     </div>
                 </section>
                 <section className='nodes'>
@@ -98,7 +112,7 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                         <FontAwesomeIcon icon={faPlus} className='icon' />
                     </div>
                     <div className='map'>
-                    {nodes.map(n => <Node node={n} />)}
+                    {nodes.map(n => <Node setNodeDetails={setNodeDetails} setTypeDetails={setTypeDetails} node={n} />)}
                     </div>
                 </section>
                 <section className='nodepools'>
@@ -107,7 +121,21 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                         <FontAwesomeIcon icon={faPlus} className='icon' />
                     </div>
                 <div className='map'>
-                {nodepools.map(np => <p>• {np.name}</p>)}
+                {nodepools.map(np => <Nodepool nodepool={np} setNodepoolDetails={setNodepoolDetails} setTypeDetails={setTypeDetails} />)}
+                </div>
+                </section>
+                <section className='nodepools'>
+                <div className='header'>
+                        <h2 className='blue-underline'>Details</h2>
+                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                    </div>
+                <div className='map'>
+                {typeDetails === 'module' ? <ModuleDetails module={moduleDetails} /> : null}
+                {typeDetails === 'version' ? <VersionDetails version={versionDetails} /> : null}
+                {typeDetails === 'node' ? <NodeDetails node={nodeDetails} /> : null}
+                {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} /> : null}
+                {typeDetails === '' ? <p>Make a selection to view details</p> : null}
+
                 </div>
                 </section>
                 </div>
