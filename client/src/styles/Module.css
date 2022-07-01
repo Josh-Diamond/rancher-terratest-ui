@@ -22,3 +22,8 @@
 /* p {
     font-weight: bold;
 } */
+
+.module-details {
+    display: flex;
+    flex-direction: column;
+}
