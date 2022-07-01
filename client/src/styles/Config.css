@@ -40,11 +40,24 @@
 .icon {
   height: 15px;
   padding-right: 15px;
+      color: #0175A8;
+
 }
 
 .icon:hover {
-    color: #0175A8;
+    color: rgba(140,196,63, 0.8);
+    /* color: #8CC43F; */
+    /* color: #BAD546; */
+    /* color: #0175A8; */
     cursor: pointer;
+}
+
+.rotate {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .map {

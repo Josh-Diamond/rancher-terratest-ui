@@ -15,7 +15,9 @@
 
 .module-container:hover {
     color: #fff;
-    background-color: #0175A8;
+    background-color: rgba(140,196,63, 0.8);
+    /* background-color: #BAD546; */
+    /* background-color: #0175A8; */
     cursor: pointer;
 }
 

@@ -6,7 +6,7 @@ import Logo from '../../static/jdlogo.png'
 
 export default function CreatedBy({ setCreatedBy }) {
     return (
-        <div onClick={() => setCreatedBy(false)} className='div1'>
+        <div onClick={() => setCreatedBy(false)} className='div1 unselectable'>
             <div className='div2'>
                 <h4>CREATED BY</h4>
                 <img src={Logo} alt='Logo' className='created-by-logo' />
