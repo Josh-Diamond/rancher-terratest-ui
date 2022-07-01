@@ -11,7 +11,7 @@ import { KubernetesVersion } from '../components/config/KubernetesVersion'
 import { Node } from '../components/config/Node'
 import { Nodepool } from '../components/config/Nodepool'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faSquarePlus} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faSquarePlus, faXmark} from '@fortawesome/free-solid-svg-icons'
 
 export const Config = ({setAuth, isOpen, setIsOpen}) => {
     const [modules, setModules] = useState([])
@@ -127,7 +127,8 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                 <section className='nodepools'>
                 <div className='header'>
                         <h2 className='blue-underline'>Details</h2>
-                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                        {typeDetails === '' ? null : <FontAwesomeIcon icon={faXmark} className='icon' onClick={() => setTypeDetails('')} />}
+                        
                     </div>
                 <div className='map'>
                 {typeDetails === 'module' ? <ModuleDetails module={moduleDetails} /> : null}
