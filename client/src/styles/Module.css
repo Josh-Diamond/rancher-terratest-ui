@@ -32,7 +32,10 @@
     width: 50vw;
     height: 165px;
     justify-content: space-evenly;
-    background-color: rgba(0,0,0,.9);
+    /* background-color: rgba(0,0,0,.9); */
+     /* background-color: rgba(1,117,168,.8); */
+     /* background-color: rgba(109,167,57,.9); */
+     background-color: rgba(91,149,50,.9);
     border-radius: 12px;
     color: white;
     background-image: url('../static/rgf.png');
@@ -51,9 +54,20 @@
     margin: 0 auto;
     font-weight: bold;
 }
-/* .rbf-details {
-    position: fixed;
-    height: 100px;
-    left: 565px;
-    opacity: 0.75;
-} */
+
+.value {
+    font-weight: bold;
+}
+
+.trash {
+    /* color: pink; */
+    height: 25px;
+    position: absolute;
+    bottom: 7%;
+    left: 81%;
+    cursor: pointer;
+}
+
+.trash:hover {
+    color: #c60200;
+}

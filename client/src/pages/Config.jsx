@@ -13,51 +13,7 @@ import { Nodepool } from '../components/config/Nodepool'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSquarePlus, faXmark} from '@fortawesome/free-solid-svg-icons'
 
-export const Config = ({setAuth, isOpen, setIsOpen}) => {
-    const [modules, setModules] = useState([])
-    const [aksVersions, setAksVersions] = useState([])
-    const [k3sVersions, setK3sVersions] = useState([])
-    const [rke1Versions, setRke1Versions] = useState([])
-    const [rke2Versions, setRke2Versions] = useState([])
-    const [nodes, setNodes] = useState([])
-    const [nodepools, setNodepools] = useState([])
-    const [moduleDetails, setModuleDetails] = useState({})
-    const [versionDetails, setVersionDetails] = useState({})
-    const [nodeDetails, setNodeDetails] = useState({})
-    const [nodepoolDetails, setNodepoolDetails] = useState({})
-    const [typeDetails, setTypeDetails] = useState('')
-
-    console.log("mod", moduleDetails)
-    console.log("version", versionDetails)
-    console.log("node", nodeDetails)
-    console.log("pool", nodepoolDetails)
-    console.log('type', typeDetails)
-    useEffect(() => {
-        axiosWithAuth()
-          .get('http://localhost:5001/api/modules')
-          .then(res => setModules(res.data))
-          .catch(err => console.log(err))
-
-          axiosWithAuth()
-          .get('http://localhost:5001/api/k8s')
-          .then(res => {
-            setAksVersions(res.data.filter(version => version.module === 'aks'))
-            setK3sVersions(res.data.filter(version => version.module === 'k3s'))
-            setRke1Versions(res.data.filter(version => version.module === 'rke1'))
-            setRke2Versions(res.data.filter(version => version.module === 'rke2'))
-          })
-          .catch(err => console.log(err))
-
-          axiosWithAuth()
-          .get('http://localhost:5001/api/nodes')
-          .then(res => setNodes(res.data))
-          .catch(err => console.log(err))
-
-          axiosWithAuth()
-          .get('http://localhost:5001/api/nodepools')
-          .then(res => setNodepools(res.data))
-          .catch(err => console.log(err))
-      },[])
+export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVersions, rke1Versions, rke2Versions, nodes, nodepools, moduleDetails, setModuleDetails, versionDetails, setVersionDetails, nodeDetails, setNodeDetails, nodepoolDetails, setNodepoolDetails, typeDetails, setTypeDetails, count, setCount}) => {
 
     return (
         <div className='config-wrapper unselectable'>
@@ -131,10 +87,10 @@ export const Config = ({setAuth, isOpen, setIsOpen}) => {
                         
                     </div>
                 <div className='map'>
-                {typeDetails === 'module' ? <ModuleDetails module={moduleDetails} /> : null}
-                {typeDetails === 'version' ? <VersionDetails version={versionDetails} /> : null}
-                {typeDetails === 'node' ? <NodeDetails node={nodeDetails} /> : null}
-                {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} /> : null}
+                {typeDetails === 'module' ? <ModuleDetails module={moduleDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'version' ? <VersionDetails version={versionDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'node' ? <NodeDetails node={nodeDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {typeDetails === '' ? <p className='detail-note'>Make a selection to view details</p> : null}
 
                 </div>

@@ -1,10 +1,22 @@
 import React, { version } from 'react'
-// import '../../styles/Module.css'
+import axiosWithAuth from '../auth/axiosWithAuth'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import '../../styles/Module.css'
 
-export const NodeDetails = ({ node }) => {
-
+export const NodeDetails = ({ node, count, setCount, setTypeDetails }) => {
+    const Delete = () => {
+        axiosWithAuth()
+            .delete(`http://localhost:5001/api/nodes/${node.id}`)
+            .then(
+                setCount(count + 1),
+                setTypeDetails('')
+            )
+            .catch(err => console.log(err))
+    }
     return (
         <div className='module-details'>
+            <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />
             <h2 className='spec-title'>NODE</h2>
             <div className='spec'>
                 <p>name:</p>
