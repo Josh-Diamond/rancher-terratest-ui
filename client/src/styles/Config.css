@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* border: 1px solid red; */
     align-items: center;
     box-sizing: border-box;
     width: calc(100vw - 240px);
@@ -27,6 +28,10 @@
     /* border: 1px solid red; */
     background-color: #FBFBF8;
     border-radius: 12px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .header {
@@ -69,6 +74,11 @@
 
 section {
     padding: 10px;
+    /* border: 1px solid green; */
+    height: 113px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
     /* border: 1px solid #0175A8; */
 }
 
@@ -106,3 +116,9 @@ section {
 .detail-note {
     margin-top: 50px;
 }
+
+.details {
+    /* border: 1px solid blue; */
+    height: 215px;
+}
+
