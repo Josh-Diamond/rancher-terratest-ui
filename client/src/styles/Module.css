@@ -15,7 +15,9 @@
 
 .module-container:hover {
     color: #fff;
-    background-color: rgba(140,196,63, 0.8);
+    /* background-color: rgba(140,196,63, 0.8); */
+
+    background-color: rgba(66,81,96, .8);
     /* background-color: #BAD546; */
     /* background-color: #0175A8; */
     cursor: pointer;
@@ -30,18 +32,20 @@
     flex-direction: column;
     /* border: 1px solid red; */
     width: 50vw;
-    height: 165px;
+    height: 170px;
     justify-content: space-evenly;
     /* background-color: rgba(0,0,0,.9); */
      /* background-color: rgba(1,117,168,.8); */
      /* background-color: rgba(109,167,57,.9); */
-     background-color: rgba(91,149,50,.9);
+     /* background-color: rgba(91,149,50,.9); */
     border-radius: 12px;
     color: white;
-    background-image: url('../static/rgf.png');
-    background-size: 45vw;
+    background-image: url('../static/rdbg.png');
+    background-size: 35vw;
+    /* border: 1px solid red; */
     background-position: center;
-    background-repeat: no-repeat;
+    opacity: .9;
+    /* background-repeat: no-repeat; */
     
 }
 
@@ -69,5 +73,6 @@
 }
 
 .trash:hover {
-    color: #c60200;
+    /* color: #c60200; */
+    color: #C20114;
 }

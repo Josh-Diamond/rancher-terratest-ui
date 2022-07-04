@@ -10,6 +10,8 @@ import { NodepoolDetails } from '../components/config/NodepoolDetails'
 import { KubernetesVersion } from '../components/config/KubernetesVersion'
 import { Node } from '../components/config/Node'
 import { Nodepool } from '../components/config/Nodepool'
+import { AddModule } from '../components/config/AddModule'
+import { AddVersion } from '../components/config/AddVersion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSquarePlus, faXmark} from '@fortawesome/free-solid-svg-icons'
 
@@ -24,7 +26,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 <section className="modules">
                     <div className='header'>
                         <h2 className='blue-underline'>Modules</h2>
-                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                        <FontAwesomeIcon icon={faPlus} className='icon' onClick={(()=> setTypeDetails('add_module'))} />
                     </div>
                     <div className='map'>
                         {modules.map(m => <Module module={m} setModuleDetails={setModuleDetails} setTypeDetails={setTypeDetails} />)}
@@ -33,7 +35,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 <section className='k8sversions'>
                     <div className='header'>
                         <h2 className='blue-underline'>Kubernetes Versions</h2>
-                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                        <FontAwesomeIcon icon={faPlus} className='icon' onClick={(()=> setTypeDetails('add_version'))} />
                     </div>
                     <div className='map'>
                         <div className='k8s-title'>
@@ -65,7 +67,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 <section className='nodes'>
                 <div className='header'>
                         <h2 className='blue-underline'>Nodes</h2>
-                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                        <FontAwesomeIcon icon={faPlus} className='icon' onClick={(()=> setTypeDetails('add_node'))} />
                     </div>
                     <div className='map'>
                     {nodes.map(n => <Node setNodeDetails={setNodeDetails} setTypeDetails={setTypeDetails} node={n} />)}
@@ -74,7 +76,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 <section className='nodepools'>
                 <div className='header'>
                         <h2 className='blue-underline'>Node Pools</h2>
-                        <FontAwesomeIcon icon={faPlus} className='icon' />
+                        <FontAwesomeIcon icon={faPlus} className='icon' onClick={(()=> setTypeDetails('add_nodepool'))} />
                     </div>
                 <div className='map'>
                 {nodepools.map(np => <Nodepool nodepool={np} setNodepoolDetails={setNodepoolDetails} setTypeDetails={setTypeDetails} />)}
@@ -82,16 +84,26 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 </section>
                 <section className='nodepools'>
                 <div className='header'>
-                        <h2 className='blue-underline'>Details</h2>
+                        {typeDetails != 'add_module' && typeDetails != 'add_version' && typeDetails != 'add_node' && typeDetails != 'add_nodepool' && typeDetails != 'module_success' && typeDetails != 'module_error' ? <h2 className='blue-underline'>Details</h2> : null}
+                        {typeDetails === 'add_module' || typeDetails === 'add_version' || typeDetails === 'add_node' || typeDetails === 'add_nodepool' ? <h2 className='blue-underline'>Create</h2> : null}
+                        {typeDetails === 'module_success' ? <h2 className='blue-underline'>Success</h2> : null}
+                        {typeDetails === 'module_error' ? <h2 className='blue-underline'>Error</h2> : null}
                         {typeDetails === '' ? null : <FontAwesomeIcon icon={faXmark} className='icon' onClick={() => setTypeDetails('')} />}
                         
                     </div>
                 <div className='map'>
+                {/* Details */}
                 {typeDetails === 'module' ? <ModuleDetails module={moduleDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {typeDetails === 'version' ? <VersionDetails version={versionDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {typeDetails === 'node' ? <NodeDetails node={nodeDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {/* Add */}
+                {typeDetails === 'add_module' ? <AddModule count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'add_version' ? <AddVersion count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {/* Notes */}
                 {typeDetails === '' ? <p className='detail-note'>Make a selection to view details</p> : null}
+                {typeDetails === 'module_success' ? <p className='detail-note'>Module created</p> : null}
+                {typeDetails === 'module_error' ? <p className='detail-note'>Error encountered</p> : null}
 
                 </div>
                 </section>

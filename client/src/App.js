@@ -39,10 +39,10 @@ useEffect(() => {
     axiosWithAuth()
     .get('http://localhost:5001/api/k8s')
     .then(res => {
-      setAksVersions(res.data.filter(version => version.module === 'aks'))
-      setK3sVersions(res.data.filter(version => version.module === 'k3s'))
-      setRke1Versions(res.data.filter(version => version.module === 'rke1'))
-      setRke2Versions(res.data.filter(version => version.module === 'rke2'))
+      setAksVersions(res.data.filter(version => version.module === 'aks').reverse())
+      setK3sVersions(res.data.filter(version => version.module === 'k3s').reverse())
+      setRke1Versions(res.data.filter(version => version.module === 'rke1').reverse())
+      setRke2Versions(res.data.filter(version => version.module === 'rke2').reverse())
     })
     .catch(err => console.log(err))
 
