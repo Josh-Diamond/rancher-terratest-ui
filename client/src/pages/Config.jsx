@@ -13,7 +13,7 @@ import { Nodepool } from '../components/config/Nodepool'
 import { AddModule } from '../components/config/AddModule'
 import { AddVersion } from '../components/config/AddVersion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faSquarePlus, faXmark} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faCheck, faMinus, faXmark} from '@fortawesome/free-solid-svg-icons'
 
 export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVersions, rke1Versions, rke2Versions, nodes, nodepools, moduleDetails, setModuleDetails, versionDetails, setVersionDetails, nodeDetails, setNodeDetails, nodepoolDetails, setNodepoolDetails, typeDetails, setTypeDetails, count, setCount}) => {
 
@@ -82,7 +82,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 {nodepools.map(np => <Nodepool nodepool={np} setNodepoolDetails={setNodepoolDetails} setTypeDetails={setTypeDetails} />)}
                 </div>
                 </section>
-                <section className='nodepools'>
+                <section className='details'>
                 <div className='header'>
                         {typeDetails != 'add_module' && typeDetails != 'add_version' && typeDetails != 'add_node' && typeDetails != 'add_nodepool' && typeDetails != 'module_success' && typeDetails != 'module_error' ? <h2 className='blue-underline'>Details</h2> : null}
                         {typeDetails === 'add_module' || typeDetails === 'add_version' || typeDetails === 'add_node' || typeDetails === 'add_nodepool' ? <h2 className='blue-underline'>Create</h2> : null}
