@@ -99,7 +99,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 {typeDetails === 'nodepool' ? <NodepoolDetails nodepool={nodepoolDetails} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {/* Add */}
                 {typeDetails === 'add_module' ? <AddModule count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
-                {typeDetails === 'add_version' ? <AddVersion count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'add_version' ? <AddVersion modules={modules} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {/* Notes */}
                 {typeDetails === '' ? <p className='detail-note'>Make a selection to view details</p> : null}
                 {typeDetails === 'module_success' ? <p className='detail-note'>Module created</p> : null}

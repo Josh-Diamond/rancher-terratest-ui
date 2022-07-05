@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import axiosWithAuth from '../auth/axiosWithAuth'
 import '../../styles/Module.css'
 
-export const AddVersion = ({ count, setCount, setTypeDetails}) => {
+export const AddVersion = ({ modules, count, setCount, setTypeDetails}) => {
     const [data, setData] = useState({
-        module: 'aks',
+        module: modules[0].module,
         version: ''
     })
 
@@ -81,10 +81,7 @@ export const AddVersion = ({ count, setCount, setTypeDetails}) => {
             <form onSubmit={data.module === "aks" ? AddAks : data.module === "k3s" || data.module === "rke2" ? AddK3s : data.module === "rke1" ? AddRke1 : null}>
                 <label htmlFor='module'>Module:
                 <select onChange={e => setData({...data, module: e.target.value})} name="module">
-                    <option value="aks" >aks</option>
-                    <option value="k3s" >k3s</option>
-                    <option value="rke1" >rke1</option>
-                    <option value="rke2" >rke2</option>
+                    {modules.map(m => <option value={m.module}>{m.module}</option>)}
                 </select>
                     {/* <input type='text' name='module' value={data.module} onChange={e => setData({...data, module: e.target.value})}  /> */}
                 </label>
