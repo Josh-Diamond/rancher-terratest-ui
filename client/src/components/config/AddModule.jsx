@@ -30,8 +30,8 @@ export const AddModule = ({ count, setCount, setTypeDetails}) => {
     return (
         <div className='module-details'>
             <h2 className='spec-title'>MODULE</h2>
-            <form onSubmit={Add}>
-                <label htmlFor='module'>Module:
+            <form className='spec-wrapper' onSubmit={Add}>
+                <label className='spec' htmlFor='module'>Module:
                     <input type='text' name='module' value={module} onChange={HandleChange} autoFocus  />
                 </label>
             </form>
