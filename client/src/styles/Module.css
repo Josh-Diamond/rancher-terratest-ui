@@ -50,17 +50,26 @@
 
 .spec {
     display: flex;
-    padding: 0 2vw;
+    padding-left: 2vw;
     /* border: 1px solid green; */
     justify-content: space-between;
     margin: 0 6vh;
+    width: 80%;
+}
+.spec-icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid purple; */
 }
 .spec-wrapper {
     /* border: 1px solid red; */
     height: 120px;
     display: flex;
+    /* border: 1px solid red; */
     flex-direction: column;
     justify-content: space-evenly;
+    width: 100%;
 }
 .spec-title {
     margin: 0 auto;
@@ -76,9 +85,13 @@
 .trash {
     /* color: pink; */
     height: 25px;
-    position: absolute;
-    bottom: 7%;
-    left: 81%;
+    align-self: flex-end;
+    margin: 10px 15px;
+    /* border: 1px solid red; */
+    /* position: relative; */
+    /* position: absolute; */
+
+
     cursor: pointer;
 }
 
@@ -86,3 +99,4 @@
     /* color: #c60200; */
     color: #C20114;
 }
+

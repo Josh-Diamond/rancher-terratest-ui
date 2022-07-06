@@ -17,21 +17,24 @@ export const VersionDetails = ({ version, count, setCount, setTypeDetails }) => 
 
     return (
         <div className='module-details'>
-            {/* <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' /> */}
             <h2 className='spec-title'>KUBERNETES VERSION</h2>
-           <div className='spec-wrapper'>
-            <div className='spec'>
-                <p>module:</p>
-                <p className='value'>{version.module}</p>
+           <div className='spec-icon-wrapper'>
+            <div className='spec-wrapper'>
+                <div className='spec'>
+                    <p>module:</p>
+                    <p className='value'>{version.module}</p>
+                </div>
+                <div className='spec'>
+                    <p>version:</p>
+                    <p className='value'>{version.version}</p>
+                </div>
+                <div className='spec'>
+                    <p>value:</p>
+                    <p className='value'>{version.value}</p>
+                </div>
+
             </div>
-            <div className='spec'>
-                <p>version:</p>
-                <p className='value'>{version.version}</p>
-            </div>
-            <div className='spec'>
-                <p>value:</p>
-                <p className='value'>{version.value}</p>
-            </div>
+            <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />       
            </div>
         </div>
     )
