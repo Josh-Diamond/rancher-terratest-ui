@@ -18,15 +18,17 @@ export const ModuleDetails = ({ module, count, setCount, setTypeDetails}) => {
 
     return (
             <div className='module-details'>
-                <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />
+                {/* <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' /> */}
                 <h2 className='spec-title'>MODULE</h2>
-                <div className='spec'>
-                    <p>module:</p>
-                    <p className='value'>{module.module}</p>
-                </div>
-                <div className='spec'>
-                    <p>value:</p>
-                    <p className='value'>{module.value}</p>
+                <div className='spec-wrapper'>
+                    <div className='spec'>
+                        <p>module:</p>
+                        <p className='value'>{module.module}</p>
+                    </div>
+                    <div className='spec'>
+                        <p>value:</p>
+                        <p className='value'>{module.value}</p>
+                    </div>
                 </div>
             </div>
     )

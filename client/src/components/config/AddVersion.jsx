@@ -78,18 +78,21 @@ export const AddVersion = ({ modules, count, setCount, setTypeDetails}) => {
     return (
         <div className='module-details'>
             <h2 className='spec-title'>KUBERNETES VERSION</h2>
-            <form onSubmit={data.module === "aks" ? AddAks : data.module === "k3s" || data.module === "rke2" ? AddK3s : data.module === "rke1" ? AddRke1 : null}>
-                <label htmlFor='module'>Module:
+            {/* <div className='spec-wrapper'> */}
+
+            <form className='spec-wrapper' onSubmit={data.module === "aks" ? AddAks : data.module === "k3s" || data.module === "rke2" ? AddK3s : data.module === "rke1" ? AddRke1 : null}>
+                <label className='spec' htmlFor='module'>Module:
                 <select onChange={e => setData({...data, module: e.target.value})} name="module">
                     {modules.map(m => <option value={m.module}>{m.module}</option>)}
                 </select>
                     {/* <input type='text' name='module' value={data.module} onChange={e => setData({...data, module: e.target.value})}  /> */}
                 </label>
-                <label htmlFor='version'>Version:
+                <label className='spec' htmlFor='version'>Version:
                     <input type='text' name='version' value={data.version} onChange={e => setData({...data, version: e.target.value})}  />
                 </label>
-                <button>Submit</button>
+                {/* <button className='spec'>Submit</button> */}
             </form>
+            {/* </div> */}
         </div>
     )
 }
