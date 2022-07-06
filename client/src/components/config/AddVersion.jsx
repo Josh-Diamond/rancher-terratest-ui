@@ -77,7 +77,7 @@ export const AddVersion = ({ modules, count, setCount, setTypeDetails}) => {
     
     return (
         <div className='module-details'>
-            <h2 className='spec-title'>KUBERNETES VERSION</h2>
+            <h2 className='spec-title'> ADD KUBERNETES VERSION</h2>
             {/* <div className='spec-wrapper'> */}
 
             <form className='spec-wrapper' onSubmit={data.module === "aks" ? AddAks : data.module === "k3s" || data.module === "rke2" ? AddK3s : data.module === "rke1" ? AddRke1 : null}>
