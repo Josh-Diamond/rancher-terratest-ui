@@ -12,6 +12,7 @@ import { Node } from '../components/config/Node'
 import { Nodepool } from '../components/config/Nodepool'
 import { AddModule } from '../components/config/AddModule'
 import { AddVersion } from '../components/config/AddVersion'
+import { AddNode } from '../components/config/AddNode'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faCheck, faMinus, faXmark} from '@fortawesome/free-solid-svg-icons'
 
@@ -100,6 +101,7 @@ export const Config = ({setAuth, isOpen, setIsOpen, modules, aksVersions, k3sVer
                 {/* Add */}
                 {typeDetails === 'add_module' ? <AddModule count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {typeDetails === 'add_version' ? <AddVersion modules={modules} count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
+                {typeDetails === 'add_node' ? <AddNode count={count} setCount={setCount} setTypeDetails={setTypeDetails} /> : null}
                 {/* Notes */}
                 {typeDetails === '' ? <p className='detail-note'>Make a selection to view details</p> : null}
                 {typeDetails === 'module_success' ? <p className='detail-note'>Module created</p> : null}

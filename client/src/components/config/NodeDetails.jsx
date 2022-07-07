@@ -16,27 +16,32 @@ export const NodeDetails = ({ node, count, setCount, setTypeDetails }) => {
     }
     return (
         <div className='module-details'>
-            <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />
             <h2 className='spec-title'>NODE</h2>
-            <div className='spec'>
-                <p>name:</p>
-                <p>{node.name}</p>
+            <div className='spec-icon-wrapper'>
+                <div className='spec-wrapper'>
+                    <div className='spec'>
+                        <p>name:</p>
+                        <p>{node.name}</p>
+                    </div>
+                    <div className='spec'>
+                        <p>quantity:</p>
+                        <p>{node.quantity}</p>
+                    </div>
+                    <div className='spec'>
+                        <p>etcd:</p>
+                        <p>{node.etcd ? 'true' : 'false'}</p>
+                    </div>
+                    <div className='spec'>
+                        <p>cp:</p>
+                        <p>{node.cp ? 'true' : 'false'}</p>
+                    </div>
+                    <div className='spec'>
+                        <p>wkr:</p>
+                        <p>{node.wkr ? 'true' : 'false'}</p>
+                    </div>
             </div>
-            <div className='spec'>
-                <p>quantity:</p>
-                <p>{node.quantity}</p>
-            </div>
-            <div className='spec'>
-                <p>etcd:</p>
-                <p>{node.etcd ? 'true' : 'false'}</p>
-            </div>
-            <div className='spec'>
-                <p>cp:</p>
-                <p>{node.cp ? 'true' : 'false'}</p>
-            </div>
-            <div className='spec'>
-                <p>wkr:</p>
-                <p>{node.wkr ? 'true' : 'false'}</p>
+            <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />
+
             </div>
         </div>
     )
