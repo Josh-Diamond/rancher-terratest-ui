@@ -21,23 +21,23 @@ export const NodeDetails = ({ node, count, setCount, setTypeDetails }) => {
                 <div className='spec-wrapper'>
                     <div className='spec'>
                         <p>name:</p>
-                        <p>{node.name}</p>
+                        <p className='value'>{node.name}</p>
                     </div>
                     <div className='spec'>
                         <p>quantity:</p>
-                        <p>{node.quantity}</p>
+                        <p className='value'>{node.quantity}</p>
                     </div>
                     <div className='spec'>
                         <p>etcd:</p>
-                        <p>{node.etcd ? 'true' : 'false'}</p>
+                        <p className='value'>{node.etcd ? 'true' : 'false'}</p>
                     </div>
                     <div className='spec'>
                         <p>cp:</p>
-                        <p>{node.cp ? 'true' : 'false'}</p>
+                        <p className='value'>{node.cp ? 'true' : 'false'}</p>
                     </div>
                     <div className='spec'>
                         <p>wkr:</p>
-                        <p>{node.wkr ? 'true' : 'false'}</p>
+                        <p className='value'>{node.wkr ? 'true' : 'false'}</p>
                     </div>
             </div>
             <FontAwesomeIcon icon={faTrash} onClick={Delete} className='trash' />

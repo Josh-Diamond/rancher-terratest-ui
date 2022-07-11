@@ -52,6 +52,7 @@ table {
   font-family: "Lato",arial,helvetica,sans-serif;
   letter-spacing: 1.8px;
   color: #59595B;
+  /* cursor: url('../static/jdcursor.png'), auto */
 }
 
 .diamond-logo {

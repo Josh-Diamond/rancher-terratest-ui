@@ -5,7 +5,7 @@ import '../../styles/Module.css'
 export const AddNode = ({ count, setCount, setTypeDetails }) => {
     const [data, setData] = useState({
         name: '',
-        quantity: 0,
+        quantity: 1,
         etcd: false,
         cp: false,
         wkr: false
@@ -53,7 +53,7 @@ export const AddNode = ({ count, setCount, setTypeDetails }) => {
                     <input type='text' name='name' value={data.name} onChange={HandleChanges}  />
                 </label>
                 <label className='spec' htmlFor='quantity'>Quantity:
-                    <input type='number' name='quantity' value={data.quantity} onChange={HandleChanges}  />
+                    <input type='number' min='1' name='quantity' value={data.quantity} onChange={HandleChanges}  />
                 </label>
                 <label className='spec' htmlFor='etcd'>Etcd:
                     <select onChange={HandleChanges} name="etcd">
@@ -73,7 +73,7 @@ export const AddNode = ({ count, setCount, setTypeDetails }) => {
                         <option ngValue={true}>true</option>
                     </select>
                 </label>
-                <button>click me</button>
+                <button style={{ display: 'none'}} />
             </form>
         </div>
     )
